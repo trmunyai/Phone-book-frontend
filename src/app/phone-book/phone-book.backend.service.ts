@@ -1,4 +1,4 @@
-import {HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Configuration} from './phone-book.service.config';
@@ -12,19 +12,19 @@ export class PhoneBookBackendService {
     this.actionUrl = configuration.serverWithApiUrl;
   }
 
-  public getAll<T>(): Observable<T> {
-    return this.http.get<T>(this.actionUrl.concat('findAll'));
+  public getAll(): Observable<object[]> {
+    return this.http.get(this.actionUrl.concat('findAll'));
   }
 
-  public getSingle<T>(id: string): Observable<T> {
-    return this.http.get<T>(this.actionUrl.concat('findById?id=').concat(id));
+  public getSingle(id: string): Observable<any> {
+    return this.http.get(this.actionUrl.concat('findById?id=').concat(id));
   }
 
-  public save<T>(payload: any): Observable<T> {
-    return this.http.post<T>(this.actionUrl.concat('save'), payload);
+  public save(payload: any): Observable<any> {
+    return this.http.post(this.actionUrl.concat('save'), payload);
   }
 
-  public update<T>(id: string, itemToUpdate: any): Observable<T> {
-    return this.http.put<T>(this.actionUrl.concat('update') + id, itemToUpdate);
+  public update(id: string, itemToUpdate: any): Observable<any> {
+    return this.http.put(this.actionUrl.concat('update') + id, itemToUpdate);
   }
 }
