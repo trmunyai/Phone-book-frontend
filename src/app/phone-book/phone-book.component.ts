@@ -41,16 +41,18 @@ export class PhoneBookComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(data => {
-      this.phoneBookBackendService.save({
-        name: data.name,
-        phoneNumber: data.phoneNumber
-      })
-        .subscribe(() => {
-          this.phoneBookBackendService.getAll()
-            .subscribe(responseData => {
-              this.dataSource = new MatTableDataSource(responseData);
-            });
-        });
+      if (data) {
+        this.phoneBookBackendService.save({
+          name: data.name,
+          phoneNumber: data.phoneNumber
+        })
+          .subscribe(() => {
+            this.phoneBookBackendService.getAll()
+              .subscribe(responseData => {
+                this.dataSource = new MatTableDataSource(responseData);
+              });
+          });
+      }
     });
   }
 }

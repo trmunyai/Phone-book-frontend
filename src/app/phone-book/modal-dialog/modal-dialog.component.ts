@@ -8,5 +8,11 @@ import {PhoneBookModel} from '../phone-book.model';
   styleUrls: ['./modal-dialog.component.scss']
 })
 export class ModalDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: PhoneBookModel) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: PhoneBookModel,
+              public dialogRef: MatDialogRef<ModalDialogComponent>) {
+  }
+
+  close(): void {
+    this.dialogRef.close();
+  }
 }

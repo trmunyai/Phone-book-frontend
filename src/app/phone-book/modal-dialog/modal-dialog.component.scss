@@ -3,8 +3,11 @@
   justify-content: space-around;
 }
 
-.add-new-entry {}
-.save-button {
+.btn-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+
+.btn {
+  margin-right: 2vw;
 }

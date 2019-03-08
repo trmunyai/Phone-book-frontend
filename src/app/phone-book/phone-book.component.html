@@ -1,10 +1,12 @@
 <div class="container">
-  <div>
+  <div class="container-row">
     <div class="filter-add-row">
-      <mat-form-field class="filter-add-item">
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name or Phone number">
+      <mat-form-field class="search-input">
+        <input width="20vw" matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name or Phone number">
       </mat-form-field>
-      <a href="#" (click)="addPhoneBookEntry()"><mat-icon class="filter-add-item" svgIcon="note-add"></mat-icon></a>
+      <p class="add-btn">
+        <a href="#" (click)="addPhoneBookEntry()"><mat-icon class="filter-add-item" svgIcon="note-add"></mat-icon></a>
+      </p>
     </div>
 
     <div class="phone-book-table-container mat-elevation-z4">
