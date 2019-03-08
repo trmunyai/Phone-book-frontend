@@ -9,7 +9,7 @@ export class PhoneBookBackendService {
   private actionUrl: string;
 
   constructor(private http: HttpClient, private configuration: Configuration) {
-    this.actionUrl = configuration.serverWithApiUrl;
+    this.actionUrl = configuration.SERVER_WITH_API_URL;
   }
 
   public getAll(): Observable<any> {

@@ -12,7 +12,6 @@ import {PhoneBookBackendService} from './phone-book.backend.service';
 export class PhoneBookComponent implements OnInit {
   displayedColumns = ['name', 'phoneNumber'];
   dataSource;
-  dataModel = [];
 
   constructor(iconRegistry: MatIconRegistry,
               sanitizer: DomSanitizer,

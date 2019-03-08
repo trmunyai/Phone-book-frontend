@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class Configuration {
-  public server = 'http://localhost:8080';
-  public apiUrl = '/Services/phoneBook/';
-  public serverWithApiUrl = this.server + this.apiUrl;
+  readonly SERVER = 'http://localhost:8080';
+  readonly API_URL = '/Services/phoneBook/';
+  readonly SERVER_WITH_API_URL = this.SERVER + this.API_URL;
 }
