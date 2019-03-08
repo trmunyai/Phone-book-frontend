@@ -12,7 +12,7 @@ export class PhoneBookBackendService {
     this.actionUrl = configuration.serverWithApiUrl;
   }
 
-  public getAll(): Observable<object[]> {
+  public getAll(): Observable<any> {
     return this.http.get(this.actionUrl.concat('findAll'));
   }
 
