@@ -36,7 +36,7 @@ export class PhoneBookComponent implements OnInit {
   addPhoneBookEntry() {
     const dialogRef = this.dialog.open(ModalDialogComponent, {
       width: '30vw',
-      height: '40vh',
+      height: 'auto',
       data: this.dataSource
     });
 
