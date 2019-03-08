@@ -1,0 +1,29 @@
+<div class="container">
+  <div>
+    <div class="filter-add-row">
+      <mat-form-field class="filter-add-item">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by Name or Phone number">
+      </mat-form-field>
+      <a href="#" (click)="addPhoneBookEntry()"><mat-icon class="filter-add-item" svgIcon="note-add"></mat-icon></a>
+    </div>
+
+    <div class="phone-book-table-container mat-elevation-z4">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>
